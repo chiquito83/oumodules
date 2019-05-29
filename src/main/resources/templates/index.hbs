@@ -1,0 +1,59 @@
+{{#partial "title"}}OU Modules API{{/partial}}
+
+{{#partial "content"}}
+
+    <div class="jumbotron text-center">
+
+        <h1>OU modules API (Beta)</h1>
+
+    </div>
+
+    <div class="container">
+
+        <h2>About</h2>
+        <p>This is a very simple API which allows you to get basic information about
+            OU's modules (module name, code, number of credits etc.). The data is scraped daily from
+            The Open University's <a href="http://www.open.ac.uk/courses/all">website</a>  and provided in JSON format. You might find it useful if you are
+            building some productivity app, degree prediction calculator etc. It uses jsoup for HTML parsing,
+            MySQL and Hibernate for data persistence and Spark framework for mapping requests.
+
+
+        </p>
+
+        <p>
+            Click <a href="status"> here </a> to see status.
+        </p>
+
+    </div>
+
+    <div class="container">
+        <h2>How to use</h2>
+
+        <p>You can either get info about a particular module using its code or download
+            information about all modules. At the moment you can use following GET requests:
+
+        <p> <samp>adriangrabowski.com/oumodules/v1/modules</samp> <strong>for all modules </strong></p>
+        <p> <samp>adriangrabowski.com/oumodules/v1/modules/MODULE_CODE</samp> <strong>for a particular module, e.g.:</strong> </p>
+        <p> <samp>adriangrabowski.com/oumodules/v1/modules/m250</samp> <strong>will return the following JSON: </strong></p>
+        <p> <code> {"code":"m250","name":"Object-oriented Java programming","uri":"/courses/modules/m250","level":"2","scqfLevel":"8","fheqLevel":"5","description":"This module teaches the fundamental ideas behind the object-oriented approach to programming through the widely-used Java programming language. Concentrating on aspects of Java that best demonstrate object-oriented principles and good practice,
+            you’ll gain a solid basis for further study of the Java language and object-oriented software development. Some experience in writing computer programmes is essential - see the Am I ready? section.
+            Modules count towards OU qualifications OU qualifications are modular in structure; the credits from this undergraduate module could count towards a certificate of higher education, diploma of higher education, foundation degree or honours degree.",
+            "credits":30,"link":"http://www.open.ac.uk/courses/modules/m250"}</code></p>
+
+
+        </p>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+{{/partial}}
+
+{{> base.hbs}}
